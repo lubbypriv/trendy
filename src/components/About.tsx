@@ -49,7 +49,7 @@ const About = () => (
           className="flex flex-col justify-center gap-6"
         >
           <p className="text-base leading-relaxed" style={{ color: 'hsl(0 0% 60%)' }}>
-            A Trendy nasceu com um propósito claro: democratizar o acesso a design e estratégia digital de qualidade em Angola. Porque todo negócio — não importa o tamanho — merece uma presença que gera confiança e resultados.
+            A Trendy nasceu com um propósito claro: democratizar o acesso a design e estratégia digital de qualidade em Angola. Porque todo negócio, independentemente do tamanho, merece uma presença que gera confiança e resultados.
           </p>
           <p className="text-base leading-relaxed" style={{ color: 'hsl(0 0% 60%)' }}>
             Não somos apenas uma agência que entrega posts bonitos. Somos parceiros estratégicos que entendem que para micro empreendedores, cada cliente perdido por presença amadora dói no bolso.

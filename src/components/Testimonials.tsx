@@ -55,7 +55,7 @@ const Testimonials = () => (
             </div>
             <p className="text-primary-foreground text-sm leading-relaxed mb-6">"{t.text}"</p>
             <div>
-              <p className="text-primary-foreground font-semibold text-sm">— {t.name}</p>
+              <p className="text-primary-foreground font-semibold text-sm">{t.name}</p>
               <p className="text-primary-foreground/60 text-xs">{t.role}</p>
             </div>
           </motion.div>
