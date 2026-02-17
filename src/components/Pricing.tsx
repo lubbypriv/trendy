@@ -292,9 +292,9 @@ const Pricing = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <span className="text-primary text-xs font-bold uppercase tracking-widest">Pacotes & Preços</span>
+          <span className="text-primary text-xs font-bold uppercase tracking-widest">Pacotes &amp; investimentos</span>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-foreground mt-3">
-            Escolhe o plano certo para o teu negócio.
+            Planos pensados para a realidade do teu negócio.
           </h2>
         </motion.div>
 

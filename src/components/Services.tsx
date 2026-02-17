@@ -45,12 +45,12 @@ const Services = () => (
         viewport={{ once: true }}
         className="mb-14"
       >
-        <span className="text-primary text-xs font-bold uppercase tracking-widest">O que fazemos</span>
+        <span className="text-primary text-xs font-bold uppercase tracking-widest">O que fazemos por ti</span>
         <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-trendy-white mt-3">
-          Serviços que geram resultados.
+          Do feed solto à marca consistente.
         </h2>
         <p className="mt-4 max-w-md" style={{ color: 'hsl(0 0% 50%)' }}>
-          Soluções completas de design e marketing digital para micro empreendedores que querem crescer.
+          Cuidamos da parte visual e estratégica para que tu cuides daquilo que ninguém faz melhor: o teu negócio.
         </p>
       </motion.div>
 

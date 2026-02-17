@@ -20,9 +20,9 @@ const Avulsos = () => (
       >
         <span className="text-primary text-xs font-bold uppercase tracking-widest">Serviços Avulsos</span>
         <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-foreground mt-3">
-          Só precisas de uma coisa? Temos.
+          Só precisas de uma peça? Também fazemos.
         </h2>
-        <p className="text-muted-foreground mt-3">Sem contratos, sem compromissos. Escolhe o que precisas.</p>
+        <p className="text-muted-foreground mt-3">Sem burocracia nem pacotes obrigatórios. Escolhe o que faz sentido para ti agora.</p>
       </motion.div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">

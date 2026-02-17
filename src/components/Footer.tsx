@@ -13,7 +13,7 @@ const Footer = () => (
             <span className="font-display text-lg text-primary">trendy</span>
           </div>
           <p className="text-sm" style={{ color: 'hsl(0 0% 45%)' }}>
-            O Parceiro Ideal · Benguela, Angola 🇦🇴
+            A agência criativa que puxa a tua marca para a frente · Benguela, Angola 🇦🇴
           </p>
         </div>
 
@@ -74,7 +74,7 @@ const Footer = () => (
 
       <div className="border-t border-trendy-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <p className="text-xs" style={{ color: 'hsl(0 0% 35%)' }}>
-          © 2026 Trendy · Todos os direitos reservados · Feito com ❤️ em Benguela
+          © 2026 Trendy · Todos os direitos reservados · Feito com ❤️ e café em Benguela
         </p>
         <div className="flex gap-4">
           <a href="https://instagram.com/trendy.gs" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" style={{ color: 'hsl(0 0% 45%)' }}>

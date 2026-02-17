@@ -57,8 +57,9 @@ const Hero = () => {
           </h1>
 
           <p className="text-muted-foreground text-base sm:text-lg max-w-lg mb-8 leading-relaxed" style={{ color: 'hsl(0 0% 55%)' }}>
-            Transformamos micro empreendedores invisíveis em marcas impossíveis
-            de ignorar. Design estratégico, presença digital e resultados reais.
+            Ajudamos micro empreendedores a saírem do anonimato com marcas fortes,
+            bonitas e estratégicas. Menos improviso, mais presença que chama atenção
+            tanto online como fora dela.
           </p>
 
           {/* Buttons */}
@@ -76,25 +77,36 @@ const Hero = () => {
               Ver serviços
             </a>
           </div>
-        </motion.div>
 
-        {/* Right floating cards */}
+          {/* Hero image (mobile first) */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.25 }}
+            className="mt-10 w-full max-w-xl mx-auto lg:hidden"
+          >
+            <div className="rounded-3xl overflow-hidden border border-primary/40 shadow-[0_24px_80px_rgba(0,0,0,0.65)]">
+              <img
+                src="/hero-building.png"
+                alt="Mural com a mensagem: venha crescer com a Trendy"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </motion.div>
+        </motion.div>
+        {/* Right image (desktop) */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          className="hidden lg:block flex-shrink-0 mt-32"
+          transition={{ duration: 0.7, delay: 0.25 }}
+          className="hidden lg:block flex-shrink-0 mt-24 xl:mt-28"
         >
-          <div className="animate-float grid grid-cols-2 gap-4 w-[320px]">
-            {serviceCards.map((s, i) => (
-              <div
-                key={i}
-                className="glass rounded-2xl p-5 flex flex-col gap-3 border-t-2 border-t-primary/40"
-              >
-                <s.icon className="text-primary" size={22} />
-                <span className="text-trendy-white text-sm font-medium">{s.label}</span>
-              </div>
-            ))}
+          <div className="rounded-[2.25rem] overflow-hidden border border-primary/40 shadow-[0_32px_120px_rgba(0,0,0,0.8)] max-w-[480px]">
+            <img
+              src="/hero-building.png"
+              alt="Mural com a mensagem: venha crescer com a Trendy"
+              className="w-full h-full object-cover"
+            />
           </div>
         </motion.div>
       </div>
