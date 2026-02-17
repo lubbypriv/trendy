@@ -4,7 +4,7 @@ import { Star } from "lucide-react";
 const testimonials = [
   {
     text: "Antes da Trendy, o meu Instagram parecia de outra pessoa. Agora até clientes novos comentam o quanto a marca parece profissional. As mensagens no direct triplicaram.",
-    name: "Ana Rodrigues",
+    name: "Jacira Paiva",
     role: "Dona de salão, Benguela",
   },
   {
