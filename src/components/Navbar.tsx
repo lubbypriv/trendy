@@ -13,47 +13,47 @@ const Navbar = () => {
   }, []);
 
   const links = [
-    { label: "Serviços", href: "#servicos" },
-    { label: "Sobre", href: "#sobre" },
-    { label: "Depoimentos", href: "#depoimentos" },
-    { label: "Contacto", href: "#contacto" },
-  ];
+  { label: "Serviços", href: "#servicos" },
+  { label: "Sobre", href: "#sobre" },
+  { label: "Depoimentos", href: "#depoimentos" },
+  { label: "Contacto", href: "#contacto" }];
+
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "glass-white shadow-lg"
-          : "bg-transparent"
-      }`}
-    >
+      scrolled ?
+      "glass-white shadow-lg" :
+      "bg-transparent"}`
+      }>
+
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2">
           <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center">
-            <span className="font-display text-primary-foreground text-lg leading-none">t</span>
+            <span className="font-display text-primary-foreground leading-none text-4xl px-0 my-0 mx-0">t</span>
           </div>
           <span className="font-display text-xl text-primary">trendy</span>
         </a>
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                scrolled ? "text-foreground" : "text-trendy-white"
-              }`}
-            >
+          {links.map((l) =>
+          <a
+            key={l.href}
+            href={l.href}
+            className={`text-sm font-medium transition-colors hover:text-primary ${
+            scrolled ? "text-foreground" : "text-trendy-white"}`
+            }>
+
               {l.label}
             </a>
-          ))}
+          )}
           <a
             href="#contacto"
-            className="rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-105"
-          >
-            Fala connosco
+            className="rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-105">
+            Fale connosco
+
           </a>
         </div>
 
@@ -61,47 +61,47 @@ const Navbar = () => {
         <button
           className="md:hidden relative z-50"
           onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Menu"
-        >
-          {mobileOpen ? (
-            <X className={scrolled ? "text-foreground" : "text-trendy-white"} size={24} />
-          ) : (
-            <Menu className={scrolled ? "text-foreground" : "text-trendy-white"} size={24} />
-          )}
+          aria-label="Menu">
+
+          {mobileOpen ?
+          <X className={scrolled ? "text-foreground" : "text-trendy-white"} size={24} /> :
+
+          <Menu className={scrolled ? "text-foreground" : "text-trendy-white"} size={24} />
+          }
         </button>
       </div>
 
       {/* Mobile Menu */}
       <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="md:hidden glass-white absolute inset-x-0 top-full p-6 flex flex-col gap-4 shadow-xl"
-          >
-            {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                onClick={() => setMobileOpen(false)}
-                className="text-foreground text-lg font-medium hover:text-primary transition-colors"
-              >
+        {mobileOpen &&
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          className="md:hidden glass-white absolute inset-x-0 top-full p-6 flex flex-col gap-4 shadow-xl">
+
+            {links.map((l) =>
+          <a
+            key={l.href}
+            href={l.href}
+            onClick={() => setMobileOpen(false)}
+            className="text-foreground text-lg font-medium hover:text-primary transition-colors">
+
                 {l.label}
               </a>
-            ))}
+          )}
             <a
-              href="#contacto"
-              onClick={() => setMobileOpen(false)}
-              className="rounded-full bg-primary px-5 py-3 text-center text-sm font-semibold text-primary-foreground"
-            >
+            href="#contacto"
+            onClick={() => setMobileOpen(false)}
+            className="rounded-full bg-primary px-5 py-3 text-center text-sm font-semibold text-primary-foreground">
+
               Fala connosco
             </a>
           </motion.div>
-        )}
+        }
       </AnimatePresence>
-    </nav>
-  );
+    </nav>);
+
 };
 
 export default Navbar;
