@@ -30,8 +30,8 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2">
-          <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center">
-            <span className="font-display text-primary-foreground leading-none text-4xl px-0 my-0 mx-0">t</span>
+          <div className="w-9 h-9 rounded-lg bg-primary items-center justify-center flex flex-row">
+            <span className="font-display text-primary-foreground leading-none px-0 my-0 mx-0 text-center text-2xl">t</span>
           </div>
           <span className="font-display text-xl text-primary">trendy</span>
         </a>
