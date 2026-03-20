@@ -13,109 +13,67 @@ const Navbar = () => {
   }, []);
 
   const links = [
-  { label: "Serviços", href: "#servicos" },
-  { label: "Sobre", href: "#sobre" },
-  { label: "Depoimentos", href: "#depoimentos" },
-  { label: "Contacto", href: "#contacto" }];
-
+    { label: "Serviços", href: "#servicos" },
+    { label: "Perspectivas", href: "#perspectivas" },
+    { label: "Testemunhos", href: "#depoimentos" },
+    { label: "Contacto", href: "#contacto" },
+  ];
 
   return (
-    <nav
-      className="fixed top-3 left-0 right-0 z-50 transition-all duration-300"
-    >
-      <div
-        className={`container mx-auto flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 rounded-full border border-white/10 shadow-lg shadow-black/30 ${
-          scrolled ? "glass" : "glass"
-        }`}
-      >
-        {/* Logo */}
-        <a href="#" className="flex items-center gap-2">
-          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl overflow-hidden flex items-center justify-center shadow-md shadow-black/30">
-            <img
-              src="/tt.svg"
-              alt="Trendy"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <span className="font-display text-lg sm:text-xl text-primary tracking-tight">
-            trendy
-          </span>
-        </a>
+    <nav className={`fixed top-0 left-0 right-0 z-[60] transition-colors duration-500 flex items-center justify-between px-6 md:px-12 py-6 ${scrolled ? 'bg-[#0A0A0A] backdrop-blur-md border-b border-white/5' : 'bg-transparent'}`}>
+      {/* Logo */}
+      <a href="#" className="flex items-center gap-3 group">
+        <span className="font-display text-2xl lg:text-3xl text-trendy-white group-hover:text-primary transition-colors italic">
+          trendy
+        </span>
+      </a>
 
-        {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8">
-          {links.map((l) =>
+      {/* Desktop Links */}
+      <div className="hidden md:flex items-center gap-10">
+        {links.map((l) => (
           <a
             key={l.href}
             href={l.href}
-            className={`text-sm font-medium transition-colors hover:text-primary ${
-              scrolled ? "text-foreground" : "text-trendy-white"
-            }`}
+            className="text-xs font-body font-bold uppercase tracking-widest text-trendy-white hover:text-primary transition-colors"
           >
-
-              {l.label}
-            </a>
-          )}
-          <a
-            href="#contacto"
-            className="rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-105">
-            Fale connosco
-
+            {l.label}
           </a>
-        </div>
-
-        {/* Mobile Hamburger */}
-        <button
-          className="md:hidden relative z-50"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Menu">
-
-          {mobileOpen ? (
-            <X
-              className={scrolled ? "text-foreground" : "text-trendy-white"}
-              size={24}
-            />
-          ) : (
-            <Menu
-              className={scrolled ? "text-foreground" : "text-trendy-white"}
-              size={24}
-            />
-          )}
-        </button>
+        ))}
       </div>
+
+      {/* Mobile Hamburger */}
+      <button
+        className="md:hidden relative z-50 text-trendy-white hover:text-primary transition-colors"
+        onClick={() => setMobileOpen(!mobileOpen)}
+        aria-label="Menu"
+      >
+        {mobileOpen ? <X size={28} /> : <Menu size={28} />}
+      </button>
 
       {/* Mobile Menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="md:hidden glass absolute inset-x-4 top-full mx-auto mt-2 rounded-2xl p-6 flex flex-col gap-4 shadow-xl border border-white/15"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-trendy-black z-40 flex flex-col justify-center items-center gap-8"
           >
             {links.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
                 onClick={() => setMobileOpen(false)}
-                className="text-foreground text-base font-medium hover:text-primary transition-colors"
+                className="font-display text-5xl text-trendy-white hover:text-primary transition-colors italic"
               >
                 {l.label}
               </a>
             ))}
-            <a
-              href="#contacto"
-              onClick={() => setMobileOpen(false)}
-              className="rounded-full bg-primary px-5 py-3 text-center text-sm font-semibold text-primary-foreground"
-            >
-              Fala connosco
-            </a>
           </motion.div>
         )}
       </AnimatePresence>
     </nav>
   );
-
 };
 
 export default Navbar;

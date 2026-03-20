@@ -13,89 +13,32 @@ const Contact = () => {
   return (
     <section
       id="contacto"
-      className="py-24"
-      style={{ background: "hsl(30 23% 94%)" }}
+      className="bg-trendy-black min-h-screen flex items-center py-32 md:py-48 relative overflow-hidden"
     >
-      <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Left */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
-            <span className="text-primary text-xs font-bold uppercase tracking-widest">Contacto</span>
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-foreground mt-3">
-              Vamos criar algo incrível.
-            </h2>
-            <p className="text-muted-foreground mt-4 mb-8">
-              Conta-nos um bocado sobre o teu negócio. Respondemos em até 24h com ideias e próximos passos.
-            </p>
+      <div className="container mx-auto px-6 md:px-12 relative z-10 flex flex-col justify-center max-w-6xl">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <span className="font-body text-xs font-bold uppercase tracking-[0.2em] text-primary mb-12 block">
+            Próximo Passo
+          </span>
+          <h2 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-[7rem] text-trendy-white leading-[1.0] tracking-tight mb-20">
+            A tua marca pode ser a próxima que Angola não consegue <span className="text-primary italic">ignorar.</span>
+          </h2>
 
-            <div className="space-y-4">
-              {contactInfo.map((c, i) => (
-                <div
-                  key={i}
-                  className="flex items-center gap-4 bg-card rounded-xl p-4 shadow-sm"
-                >
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <c.icon className="text-primary" size={18} />
-                  </div>
-                  <div>
-                    <p className="text-xs text-muted-foreground">{c.label}</p>
-                    {c.href ? (
-                      <a
-                        href={c.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-                      >
-                        {c.value}
-                      </a>
-                    ) : (
-                      <p className="text-sm font-medium text-foreground">
-                        {c.value}
-                      </p>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Right: CTA em vez de formulário Tally */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="bg-card rounded-2xl p-6 sm:p-8 shadow-lg flex flex-col gap-6"
+          <a
+            href="https://wa.me/244935047246"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center justify-center gap-4 bg-transparent border border-trendy-white px-10 py-6 text-sm font-body font-bold uppercase tracking-widest text-trendy-white transition-all duration-300 ease-out hover:bg-primary hover:border-primary"
           >
-            <h3 className="font-display text-xl text-foreground">
-              Bora tirar a tua marca do modo invisível?
-            </h3>
-            <p className="text-sm text-muted-foreground">
-              Escolhe o canal que preferes e fala directamente connosco. Nada de formalidades demais, só uma conversa honesta sobre o teu projecto.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="https://wa.me/244935047246"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
-              >
-                <MessageCircle size={18} />
-                Falar no WhatsApp
-              </a>
-              <a
-                href="mailto:trendy.ctt@gmail.com"
-                className="flex-1 inline-flex items-center justify-center gap-2 rounded-full border border-primary/30 px-5 py-3 text-sm font-semibold text-primary hover:bg-primary/5 transition-colors"
-              >
-                <Mail size={18} />
-                Enviar email
-              </a>
-            </div>
-          </motion.div>
-        </div>
+            Fala connosco
+            <div className="w-2 h-2 rounded-full bg-trendy-white transition-colors duration-300"></div>
+          </a>
+        </motion.div>
       </div>
     </section>
   );

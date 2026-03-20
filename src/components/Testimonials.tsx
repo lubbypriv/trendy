@@ -20,43 +20,39 @@ const testimonials = [
 ];
 
 const Testimonials = () => (
-  <section id="depoimentos" className="bg-primary py-24 relative overflow-hidden">
-    <div className="container mx-auto px-6">
+  <section id="depoimentos" className="bg-trendy-black py-32 md:py-48 min-h-screen flex flex-col justify-center border-t border-trendy-white/10">
+    <div className="container mx-auto px-6 md:px-12">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-center mb-14"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 1 }}
+        className="mb-24"
       >
-        <span className="text-primary-foreground/60 text-xs font-bold uppercase tracking-widest">Depoimentos</span>
-        <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-primary-foreground mt-3">
-          O que os clientes dizem de nós.
-        </h2>
+        <span className="font-body text-xs font-bold uppercase tracking-[0.2em] text-primary block">
+          O que dizem de nós
+        </span>
       </motion.div>
 
-      <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      <div className="flex flex-col gap-32 md:gap-48 max-w-5xl">
         {testimonials.map((t, i) => (
           <motion.div
             key={i}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.15 }}
-            className="glass rounded-2xl p-6 sm:p-8"
-            style={{
-              background: 'rgba(255,255,255,0.1)',
-              border: '1px solid rgba(255,255,255,0.15)',
-            }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-col"
           >
-            <div className="flex gap-0.5 mb-4">
-              {Array.from({ length: 5 }).map((_, j) => (
-                <Star key={j} size={16} className="text-yellow-400 fill-yellow-400" />
-              ))}
-            </div>
-            <p className="text-primary-foreground text-sm leading-relaxed mb-6">"{t.text}"</p>
-            <div>
-              <p className="text-primary-foreground font-semibold text-sm">{t.name}</p>
-              <p className="text-primary-foreground/60 text-xs">{t.role}</p>
+            <p className="font-display text-4xl sm:text-5xl md:text-6xl text-trendy-white leading-tight mb-8 italic">
+              "{t.text}"
+            </p>
+            <div className="flex items-center gap-6">
+              <div className="w-8 h-px bg-primary"></div>
+              <div>
+                <p className="text-trendy-white font-body text-sm tracking-widest uppercase font-bold">{t.name}</p>
+                <p className="text-trendy-cream opacity-50 font-body text-xs tracking-widest uppercase mt-1">{t.role}</p>
+              </div>
             </div>
           </motion.div>
         ))}

@@ -2,97 +2,68 @@ import { motion } from "framer-motion";
 
 const BeforeAfter = () => (
   <section
-    id="antes-depois"
-    className="bg-trendy-black py-24 relative overflow-hidden"
+    id="trabalho"
+    className="bg-trendy-black py-32 md:py-48 relative overflow-hidden"
   >
-    <div className="relative z-10 container mx-auto px-6">
+    <div className="container mx-auto px-6 md:px-12">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="mb-10 text-center"
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+        className="mb-24"
       >
-        <span className="text-primary text-xs font-bold uppercase tracking-widest">
-          Antes &amp; Depois
+        <span className="font-body text-xs font-bold uppercase tracking-[0.2em] text-primary block">
+          Trabalho
         </span>
-        <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-trendy-white mt-3">
-          Quando a mesma marca ganha outra força.
-        </h2>
-        <p
-          className="mt-4 max-w-2xl mx-auto text-sm sm:text-base"
-          style={{ color: "hsl(0 0% 65%)" }}
-        >
-          A mesma empreendedora, o mesmo serviço. O que muda é a forma como a
-          marca se apresenta e como passa a ser lembrada.
-        </p>
       </motion.div>
 
-      <div className="grid gap-6 lg:grid-cols-2 items-stretch">
-        {/* Antes */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
+        {/* Imagem 1 */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4 }}
-          className="glass rounded-3xl overflow-hidden border border-white/10 flex flex-col"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+          className="w-full aspect-[4/5] object-cover bg-trendy-dark"
         >
-          <div className="flex items-center justify-between px-5 py-4 bg-trendy-black/40">
-            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-trendy-white/70">
-              Antes
-            </span>
-            <span className="text-[11px] text-trendy-white/50">
-              Comunicação genérica · Visual sem identidade
-            </span>
-          </div>
-          <div className="relative bg-black">
-            <img
-              src="/antes.png"
-              alt="Peça de comunicação antes da Trendy"
-              className="w-full h-full object-cover"
-            />
-          </div>
+          <img
+            src="/trabalho-1.jpg"
+            alt="Editorial project 1"
+            className="w-full h-full object-cover grayscale-[20%]"
+          />
         </motion.div>
 
-        {/* Depois */}
+        {/* Imagem 2 (desalinhada para efeito editorial) */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4, delay: 0.1 }}
-          className="glass rounded-3xl overflow-hidden border border-primary/40 flex flex-col ring-1 ring-primary/40"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 1.5, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          className="w-full aspect-square md:mt-48 object-cover bg-trendy-dark"
         >
-          <div className="flex items-center justify-between px-5 py-4 bg-primary/10">
-            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-              Depois com a Trendy
-            </span>
-            <span className="text-[11px] text-trendy-white/70">
-              Mensagem clara · Visual que dá vontade de partilhar
-            </span>
-          </div>
-          <div className="relative bg-black">
-            <img
-              src="/depois.png"
-              alt="Peça de comunicação depois da Trendy"
-              className="w-full h-full object-cover"
-            />
-          </div>
+          <img
+            src="/trabalho-2.jpg"
+            alt="Editorial project 2"
+            className="w-full h-full object-cover grayscale-[20%]"
+          />
+        </motion.div>
+
+        {/* Imagem 3 (Full width span) */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+          className="w-full aspect-video md:col-span-2 object-cover bg-trendy-dark"
+        >
+          <img
+            src="/trabalho-3.jpg"
+            alt="Editorial project 3"
+            className="w-full h-full object-cover grayscale-[20%]"
+          />
         </motion.div>
       </div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="mt-8 text-center"
-      >
-        <p
-          className="text-xs sm:text-sm"
-          style={{ color: "hsl(0 0% 70%)" }}
-        >
-          Imagina o “antes e depois” da tua marca. Manda mensagem no WhatsApp e
-          desenhamos juntos o próximo case da Trendy.
-        </p>
-      </motion.div>
     </div>
   </section>
 );

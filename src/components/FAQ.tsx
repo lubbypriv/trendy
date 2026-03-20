@@ -26,47 +26,45 @@ const faqs = [
 const FAQ = () => (
   <section
     id="faq"
-    className="py-24"
-    style={{ background: "hsl(30 23% 94%)" }}
+    className="bg-trendy-black py-[120px] noise-overlay"
   >
-    <div className="container mx-auto px-6">
+    <div className="container mx-auto px-6 relative z-10">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="mb-10 text-center"
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        className="mb-16 text-center max-w-3xl mx-auto"
       >
-        <span className="text-primary text-xs font-bold uppercase tracking-widest">
-          Dúvidas frequentes
+        <span className="text-primary font-body text-xs font-bold uppercase tracking-widest mb-4 block">
+          FAQ
         </span>
-        <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-foreground mt-3">
-          Respostas directas, sem rodeios.
+        <h2 className="font-display text-4xl sm:text-5xl md:text-6xl text-trendy-white mt-3 leading-[1.1]">
+          Tens dúvidas? <span className="text-primary italic font-bold">Normal.</span>
         </h2>
-        <p className="mt-3 max-w-2xl mx-auto text-sm sm:text-base text-muted-foreground">
-          Se ainda assim ficares com dúvidas, chama-nos no WhatsApp. É sempre
-          melhor conversar do que adiar uma boa ideia.
+        <p className="mt-6 font-body text-trendy-cream opacity-80 text-lg md:text-xl leading-relaxed">
+          A maioria dos nossos clientes também duvidou antes de decidir.
         </p>
       </motion.div>
 
-      <div className="max-w-3xl mx-auto space-y-3">
+      <div className="max-w-3xl mx-auto space-y-4">
         {faqs.map((item, i) => (
           <motion.details
             key={item.q}
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.3, delay: i * 0.05 }}
-            className="group bg-card rounded-2xl px-5 py-4 sm:px-6 sm:py-5 border border-border/70"
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
+            className="group rounded-sm px-6 py-5 border border-white/10 transition-colors hover:border-primary/50"
+            style={{ background: "hsl(0 0% 6%)" }}
           >
-            <summary className="flex items-center justify-between cursor-pointer list-none">
-              <span className="text-sm sm:text-base font-semibold text-foreground">
-                {item.q}
-              </span>
-              <span className="ml-4 text-primary text-xl leading-none group-open:rotate-45 transition-transform select-none">
+            <summary className="flex items-center justify-between cursor-pointer list-none font-display text-xl sm:text-2xl text-trendy-white outline-none">
+              <span>{item.q}</span>
+              <span className="ml-4 text-primary text-2xl leading-none group-open:rotate-45 transition-transform duration-300 font-sans font-light">
                 +
               </span>
             </summary>
-            <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+            <p className="mt-4 font-body text-base text-trendy-cream opacity-70 leading-relaxed pl-2 border-l-2 border-primary/30">
               {item.a}
             </p>
           </motion.details>
