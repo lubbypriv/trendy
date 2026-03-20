@@ -24,9 +24,13 @@ const Hero = () => {
       {/* Cinematic Background Image with ultra dark overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="/hero.png" 
+          src="/hero.webp" 
           alt="Angolan cinematic scene" 
           className="w-full h-full object-cover object-center"
+          loading="eager"
+          fetchPriority="high"
+          width={1920}
+          height={1080}
         />
         <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.65)' }} />
       </div>

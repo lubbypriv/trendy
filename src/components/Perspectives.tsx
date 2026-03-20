@@ -3,17 +3,17 @@ import { Instagram } from "lucide-react";
 
 const posts = [
   {
-    image: "/perspectiva-1.png",
+    image: "/perspectiva-1.webp",
     link: "https://instagram.com/trendy.gs",
     alt: "Angola tem negócios de milhões com imagem de mercado informal"
   },
   {
-    image: "/perspectiva-2.png",
+    image: "/perspectiva-2.webp",
     link: "https://instagram.com/trendy.gs",
     alt: "O cliente angolano exige qualidade mas não quer pagar por ela"
   },
   {
-    image: "/perspectiva-3.png",
+    image: "/perspectiva-3.webp",
     link: "https://instagram.com/trendy.gs",
     alt: "Comprarias cereais feito em Angola com a mesma confiança que compras um Chocapic?"
   }
@@ -57,6 +57,9 @@ const Perspectives = () => (
               src={post.image}
               alt={post.alt}
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+              loading="lazy"
+              width={1080}
+              height={1350}
             />
             {/* Subtle Overlay & Icon */}
             <div className="absolute inset-0 bg-trendy-black/0 group-hover:bg-trendy-black/40 transition-colors duration-500 flex items-center justify-center">
